@@ -6,7 +6,7 @@
 .code{
     flex: 0.4;
     background: #231F20;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     overflow: hidden;
 }
 .code pre{
