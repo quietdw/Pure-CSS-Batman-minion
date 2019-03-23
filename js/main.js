@@ -441,25 +441,37 @@ var cssSource = `
 var speed = 0
 var n = 0
 var codeContainer = document.querySelector('.code>pre')
+let audio = document.querySelector('audio')
 
-var timer = setTimeout(function run(){
-    let code = cssSource.slice(0,n)
+
+document.addEventListener('mousemove', () => {
+    if (audio) {
+        audio.play()
+    }
+})
+
+
+
+var timer = setTimeout(function run() {
+    let code = cssSource.slice(0, n)
     result = Prism.highlight(code, Prism.languages.css, 'css')
     minonStyle.innerHTML = code
     codeContainer.innerHTML = result
     codeContainer.scrollTop = 10000
-    n +=1
-    if(n>=cssSource.length){
+    n += 1
+    if (n >= cssSource.length) {
         window.clearTimeout(timer)
-    }else{
-        timer = setTimeout(run,speed)
+    } else {
+        timer = setTimeout(run, speed)
     }
-},speed)
+}, speed)
 
-skip.onclick = function(){
+skip.onclick = function () {
     window.clearTimeout(timer)
     result = Prism.highlight(cssSource, Prism.languages.css, 'css')
     minonStyle.innerHTML = cssSource
     codeContainer.innerHTML = result
     codeContainer.scrollTop = 10000
+    audio.pause()
+    audio = null
 }
