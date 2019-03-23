@@ -1,49 +1,76 @@
-*{padding: 0;margin: 0px;}
-*{transition: all .3s;}
-*{box-sizing: border-box;}
-#container {height: 100vh;width:100%;display: flex;flex-direction: column;}
+* {
+    padding: 0;
+    margin: 0px;
+}
 
-.code{
+* {
+    transition: all .3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.code {
     flex: 0.4;
     background: #231F20;
     color: rgb(255, 255, 255);
     overflow: hidden;
 }
-.code pre{
+
+.code pre {
     height: 100%;
     overflow: hidden;
-    padding:0 20px;
+    padding: 0 20px;
     font-family: "Monaco, monospace";
 }
-.minion{
-    flex: 0.7;    
+
+.minion {
+    flex: 0.7;
     position: relative;
     padding-top: 30px;
     background: rgb(255, 255, 255);
 }
+
 .minion div {
     position: absolute;
 }
-.minion .minonContainer{
+
+.minion .minonContainer {
     width: 100%;
     position: relative;
-    top:40px;
+    top: 40px;
 }
 
 #skip {
     width: 76px;
     height: 30px;
-    background: #eee;
+    background: #fff;
     color: #231F20;
-    border: 0;
     padding: 5px;
     border-radius: 2px;
-    box-shadow: 1px 1px 2px #fff;
     position: absolute;
+    font-size: 14px;
+    text-align: center;
     right: 20px;
     top: 20px;
+    cursor: pointer;
+    border: solid 1px transparent;
 }
 
+#skip:hover {
+    border: solid 1px #ddd;
+    background: #eee;
+}
 
-
-
+#skip:active {
+    border: solid 1px #ddd;
+    background: #ddd;
+}
