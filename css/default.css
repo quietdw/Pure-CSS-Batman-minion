@@ -49,28 +49,32 @@
     top: 40px;
 }
 
-#skip {
-    width: 76px;
-    height: 30px;
+#skip,
+#music {
     background: #fff;
     color: #231F20;
+    width: 76px;
+    height: 30px;
+    right: 20px;
     padding: 5px;
     border-radius: 2px;
     position: absolute;
     font-size: 14px;
     text-align: center;
-    right: 20px;
-    top: 20px;
     cursor: pointer;
     border: solid 1px transparent;
 }
 
-#skip:hover {
+#skip {
+    top: 20px;
+}
+
+#skip:hover,
+#music:hover {
     border: solid 1px #ddd;
     background: #eee;
 }
 
-#skip:active {
-    border: solid 1px #ddd;
-    background: #ddd;
+#music {
+    top: 60px;
 }

@@ -442,14 +442,20 @@ var speed = 0
 var n = 0
 var codeContainer = document.querySelector('.code>pre')
 let audio = document.querySelector('audio')
-
-
-document.addEventListener('mousemove', () => {
+let audioState = false
+music.addEventListener('click', () => {
     if (audio) {
-        audio.play()
+        if (!audioState) {
+            audio.play()
+            audioState = true
+            music.innerText = '关闭音乐'
+        } else {
+            audio.pause()
+            audioState = false
+            music.innerText = '开启音乐'
+        }
     }
 })
-
 
 
 var timer = setTimeout(function run() {
@@ -473,5 +479,4 @@ skip.onclick = function () {
     codeContainer.innerHTML = result
     codeContainer.scrollTop = 10000
     audio.pause()
-    audio = null
 }
